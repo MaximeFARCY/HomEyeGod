@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 10 Mai 2017 à 09:05
+-- Généré le :  Mer 10 Mai 2017 à 09:57
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.5.38
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `actionneurs` (
   `idActionneur` int(11) NOT NULL,
-  `Etat` int(11) NOT NULL,
+  `idCapteur` int(11) NOT NULL,
   `Type` int(11) NOT NULL,
   `idMaison` int(11) NOT NULL,
   `idPiece` int(11) NOT NULL
@@ -117,8 +117,7 @@ CREATE TABLE `confidence` (
 CREATE TABLE `donnees` (
   `idData` int(11) NOT NULL,
   `idCapteur` int(11) NOT NULL,
-  `Date-Heure` datetime NOT NULL,
-  `Datas` longblob NOT NULL
+  `Datas` longblob NOT NULL COMMENT 'Fichier avec: Date et heure + données'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
