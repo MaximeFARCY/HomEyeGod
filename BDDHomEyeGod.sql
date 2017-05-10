@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 10 Mai 2017 à 08:24
+-- Généré le :  Mer 10 Mai 2017 à 09:05
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.5.38
 
@@ -58,11 +58,11 @@ CREATE TABLE `adresse` (
   `idAdresse` int(11) NOT NULL,
   `idMaison` int(11) NOT NULL,
   `idUtilisateur` int(11) NOT NULL,
-  `Ville` varchar(40) CHARACTER SET latin1 NOT NULL,
+  `Ville` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `TypeVoie` int(11) NOT NULL,
   `Num` int(11) NOT NULL,
-  `NomVoie` varchar(40) CHARACTER SET latin1 NOT NULL,
-  `Pays` varchar(40) CHARACTER SET latin1 NOT NULL,
+  `NomVoie` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Pays` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `CodePostal` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -105,7 +105,7 @@ CREATE TABLE `capteurs` (
 
 CREATE TABLE `confidence` (
   `ConfidenceValue` int(11) NOT NULL,
-  `ConfidenceName` varchar(10) CHARACTER SET latin1 NOT NULL
+  `ConfidenceName` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -129,7 +129,7 @@ CREATE TABLE `donnees` (
 
 CREATE TABLE `etattopic` (
   `EtatValue` int(11) NOT NULL,
-  `EtatName` varchar(20) CHARACTER SET latin1 NOT NULL
+  `EtatName` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -152,7 +152,7 @@ CREATE TABLE `maisons` (
 
 CREATE TABLE `pieces` (
   `idPiece` int(11) NOT NULL,
-  `Nom` varchar(15) CHARACTER SET latin1 NOT NULL,
+  `Nom` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `idMaison` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -175,11 +175,11 @@ CREATE TABLE `roles` (
 
 CREATE TABLE `topics` (
   `idTopic` int(11) NOT NULL,
-  `Titre` varchar(30) CHARACTER SET latin1 NOT NULL,
-  `Message` text CHARACTER SET latin1 NOT NULL,
+  `Titre` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Message` text COLLATE utf8_unicode_ci NOT NULL,
   `idUtilisateur` int(11) NOT NULL,
   `Comptlike` int(11) NOT NULL,
-  `Reponses` text CHARACTER SET latin1 NOT NULL,
+  `Reponses` text COLLATE utf8_unicode_ci NOT NULL,
   `Etat` int(11) NOT NULL,
   `Typetopic` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -214,7 +214,7 @@ CREATE TABLE `typetopic` (
 
 CREATE TABLE `typevoie` (
   `TypeValue` int(11) NOT NULL,
-  `TypeName` varchar(20) CHARACTER SET latin1 NOT NULL
+  `TypeName` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -226,13 +226,16 @@ CREATE TABLE `typevoie` (
 CREATE TABLE `utilisateurs` (
   `idUtilisateur` int(11) NOT NULL,
   `Rôles` int(1) DEFAULT '0' COMMENT 'User/SuperUser/SuperRoot',
-  `Nom` varchar(30) CHARACTER SET latin1 NOT NULL,
-  `Prénom` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Prénom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `idAdresse` int(11) NOT NULL,
-  `Numero` text CHARACTER SET latin1 NOT NULL,
-  `Mail` text CHARACTER SET latin1 NOT NULL,
+  `Numero` text COLLATE utf8_unicode_ci NOT NULL,
+  `Mobile` text COLLATE utf8_unicode_ci NOT NULL,
+  `Mail` text COLLATE utf8_unicode_ci NOT NULL,
   `Factures` mediumblob NOT NULL,
-  `Confidence` int(11) NOT NULL
+  `Confidence` int(11) NOT NULL,
+  `NomUtilisateur` text COLLATE utf8_unicode_ci NOT NULL,
+  `Mdp` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Utilisateurs';
 
 --
