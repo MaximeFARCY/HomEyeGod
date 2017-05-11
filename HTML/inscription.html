@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>HomEyeGod</title>
+        <title>Créer un compte</title>
     </head>
 
     <body>
         <header>
             <h1><a href="home_page.html">HOMEYEGOD</a></h1>
-            <h2>Bienvenue sur notre site internet!</h2>
+            <h2>Créez votre compte HomEyeGod</h2>
         </header>
         
         <nav>
@@ -23,12 +23,23 @@
         </nav>
         
         <section>
-            <aside>
-               
-            </aside>
-            <article>                
-                
-            </article>
+            <div><!-- on rentre les informations dans des cases -->
+                <form action="formulaire.php" method="post">
+                    <p>Nom d'utilisateur:<input type="text" name="Nom d'utilisateur" /></p>
+                    <p>Mot de passe:<input type="password" name="Mot de passe" /></p>
+                    <p>Confimer le mot de passe:<input type="password"  name="Mot de passe"/></p>
+                    <p>Adresse:<input type="text" name="Adresse"/></p>
+                    <p>Code postal:<input type="int" range="5" name="Code postal"/></p>
+                    <p>Ville:<input type="text" name="Ville"/></p>
+                    <p>email:<input type="email" name="email"/></p>
+                    <p>Numéro de téléphone:<input type="tel" name="Numéro de téléphone"/></p>
+                    <p>Numéro de téléphone fixe:<input type="tel" name="Numéro de téléphone fixe"/></p>
+                    <p><input type="submit" name="valider" /></p>
+                </form>
+
+
+
+            </div>
         </section>
         
         <footer>
