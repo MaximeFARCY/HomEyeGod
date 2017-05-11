@@ -19,6 +19,12 @@ p, h1
 {
   color: blue;
 }
+h2
+{
+	text-align: center;
+	color: blue;
+}
+
 form
 {
 	line-height:40px;
@@ -50,12 +56,10 @@ ul li
 	color: white;
 	text-decoration: none;
 }
-body
-{
+ul li a{
+    display: block;
+    text-align: center; 
+    text-decoration: none;
+    padding: 17px 8px 17px 8px;
 
-}
-h2
-{
-	text-align: center;
-	color: blue;
 }
