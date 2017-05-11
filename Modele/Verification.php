@@ -18,6 +18,7 @@ function idMail($db,$userMail){
     return $reponse;
 }
 
+
 function idNum($db,$userNum){
 //Renvoie l'ID de l'utilisateur ayant le numéro de téléphone donné
     $sql = 'SELECT idUtilisateur FROM utilisateurs WHERE Numero = "'.$userNum.'" OR Mobile = "'.$userNum.'"';
