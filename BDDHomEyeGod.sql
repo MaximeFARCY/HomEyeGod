@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 10 Mai 2017 à 09:57
+-- Généré le :  Ven 12 Mai 2017 à 07:50
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.5.38
 
@@ -46,24 +46,6 @@ CREATE TABLE `actions` (
   `idActionneur` int(11) NOT NULL,
   `idUtilisateur` int(11) NOT NULL,
   `Etatdemande` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `adresse`
---
-
-CREATE TABLE `adresse` (
-  `idAdresse` int(11) NOT NULL,
-  `idMaison` int(11) NOT NULL,
-  `idUtilisateur` int(11) NOT NULL,
-  `Ville` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `TypeVoie` int(11) NOT NULL,
-  `Num` int(11) NOT NULL,
-  `NomVoie` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `Pays` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `CodePostal` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -139,8 +121,13 @@ CREATE TABLE `etattopic` (
 
 CREATE TABLE `maisons` (
   `idMaison` int(11) NOT NULL,
-  `idAdresse` int(11) NOT NULL,
-  `idUtilisateur` int(11) NOT NULL
+  `idUtilisateur` int(11) NOT NULL,
+  `numero_voie` int(11) NOT NULL,
+  `Voie` int(11) NOT NULL,
+  `TypeVoie` int(11) NOT NULL,
+  `code_postal` int(5) NOT NULL,
+  `Ville` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Pays` varchar(40) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -227,12 +214,12 @@ CREATE TABLE `utilisateurs` (
   `Rôles` int(1) DEFAULT '0' COMMENT 'User/SuperUser/SuperRoot',
   `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Prénom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `idAdresse` int(11) NOT NULL,
+  `idAdressePrincipale` int(11) NOT NULL,
   `Numero` text COLLATE utf8_unicode_ci NOT NULL,
   `Mobile` text COLLATE utf8_unicode_ci NOT NULL,
   `Mail` text COLLATE utf8_unicode_ci NOT NULL,
   `Factures` mediumblob NOT NULL,
-  `Confidence` int(11) NOT NULL,
+  `Confidence` int(11) DEFAULT '0',
   `NomUtilisateur` text COLLATE utf8_unicode_ci NOT NULL,
   `Mdp` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Utilisateurs';
@@ -252,12 +239,6 @@ ALTER TABLE `actionneurs`
 --
 ALTER TABLE `actions`
   ADD PRIMARY KEY (`idAction`);
-
---
--- Index pour la table `adresse`
---
-ALTER TABLE `adresse`
-  ADD PRIMARY KEY (`idAdresse`);
 
 --
 -- Index pour la table `alerte`
@@ -346,11 +327,6 @@ ALTER TABLE `utilisateurs`
 --
 ALTER TABLE `actions`
   MODIFY `idAction` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `adresse`
---
-ALTER TABLE `adresse`
-  MODIFY `idAdresse` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `alerte`
 --
