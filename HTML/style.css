@@ -61,10 +61,20 @@ ul li a{
     text-align: center; 
     text-decoration: none;
     padding: 17px 8px 17px 8px;
-
 }
+
+.button
+{
+	text-align: center;
+}
+
 section
 {
 	display: flex;
     justify-content: space-around;
+}
+
+aside 
+{
+	padding: 100px;
 }
