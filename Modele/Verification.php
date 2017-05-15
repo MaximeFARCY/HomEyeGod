@@ -23,7 +23,14 @@ function idNum($db,$userNum){
 //Renvoie l'ID de l'utilisateur ayant le numéro de téléphone donné
     $sql = 'SELECT idUtilisateur FROM utilisateurs WHERE Numero = "'.$userNum.'" OR Mobile = "'.$userNum.'"';
     $reponse = $db->query($sql);
-    return reponse;
+    return $reponse;
+}
+
+function getMail($db,$idUtilisateur){
+    // Renvoie l'E-mail du nouvel utilisateur
+    $sql = 'SELECT Mail FROM utilisateurs WHERE idUtilisateur ="'.$idUtilisateur.'"';
+    $reponse = $db->query($sql);
+    return $reponse;
 }
 
 ?>

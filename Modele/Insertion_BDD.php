@@ -1,5 +1,7 @@
 <?php
 require("connexion_db.php");
+/*$requ=$db->prepare('SELECT MAX (idUtilisateur) FROM utilisateurs');
+$requ->execute();*/
 
 
 function insertNewUser($db,$username,$mdp,$nom,$prenom,$idMaison,$numero,$mobile){
