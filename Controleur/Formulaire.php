@@ -1,5 +1,6 @@
 <?php
 // Contrôleur pour le formulaire inscription
+include ("Modele/Verification.php");
 if ($_POST["valider"] AND $_POST["Nom d'utilisateur"]!=NULL AND $_POST["Mot de passe"]!=NULL AND $_POST["Confirmation de mot de passe"]!=NULL
     AND $_POST["Mot de passe"]==$_POST["Confirmation de mot de passe"] AND $_POST["Adresse"]!=NULL AND $_POST["Code Postal"]!=NULL
     AND $_POST["Ville"]!=NULL AND $_POST["Email"]!= NULL AND $_POST["Numéro de téléphone"]!=NULL ){
@@ -12,6 +13,12 @@ else {
     if ($_POST["Nom d'utilisateur"] == NULL) {
         echo "Vous devez entrer un nom d'utilisateur";
     }
+
+    if (idUtilisateur($db, $_POST["Nom d'utilisateur"])==$_POST["Nom d'utilisateur"]){
+        echo "Ce nom d'utilisateur est déjà utilisé";
+    }
+
+
 
     if ($_POST["Mot de passe"] == NULL) {
         echo "Vous devez entrer un mot de passe";
@@ -41,9 +48,24 @@ else {
         echo "Vous devez entrer une adresse mail";
     }
 
+
+    $email = 'test@exemple.com';
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+        echo "Cette adresse mail est valide";
+    }
+    else {
+        echo "Cette adresse mail est invalide";
+    }
+
+    if (idMail($db, $_POST["Email"])==$_POST["Email"]){
+        echo "Cette adresse mail est déjà utilisée";
+    }
+
     if ($_POST["Numéro de téléphone"] == NULL) {
         echo "Vous devez entrer un numéro de téléphone";
     }
+
+
 }
 
 ?>
