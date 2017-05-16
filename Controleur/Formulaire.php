@@ -1,12 +1,24 @@
 <?php
 // Contrôleur pour le formulaire inscription
 include ("Modele/Verification.php");
-if ($_POST["valider"] AND $_POST["Nom d'utilisateur"]!=NULL AND $_POST["Mot de passe"]!=NULL AND $_POST["Confirmation de mot de passe"]!=NULL
-    AND $_POST["Mot de passe"]==$_POST["Confirmation de mot de passe"] AND $_POST["Adresse"]!=NULL AND $_POST["Code Postal"]!=NULL
-    AND $_POST["Ville"]!=NULL AND $_POST["Email"]!= NULL AND $_POST["Numéro de téléphone"]!=NULL ){
+$email = 'test@exemple.com';
+if ($_POST["valider"]
+    AND $_POST["Nom d'utilisateur"]!=NULL
+    AND idUtilisateur($db, $_POST["Nom d'utilisateur"])==NULL
+    AND $_POST["Mot de passe"]!=NULL
+    AND $_POST["Confirmation de mot de passe"]!=NULL
+    AND $_POST["Mot de passe"]==$_POST["Confirmation de mot de passe"]
+    AND $_POST["Adresse"]!=NULL
+    AND $_POST["Code Postal"]!=NULL
+    AND $_POST["Ville"]!=NULL
+    AND $_POST["Email"]!= NULL
+    AND filter_var($email, FILTER_VALIDATE_EMAIL)
+    AND idMail($db, $_POST["Email"])==NULL
+    AND $_POST["Numéro de téléphone"]!=NULL ){
     header("Location : la page compte crée");
     exit;
 }
+
 
 else {
 
@@ -17,8 +29,6 @@ else {
     if (idUtilisateur($db, $_POST["Nom d'utilisateur"])==$_POST["Nom d'utilisateur"]){
         echo "Ce nom d'utilisateur est déjà utilisé";
     }
-
-
 
     if ($_POST["Mot de passe"] == NULL) {
         echo "Vous devez entrer un mot de passe";
@@ -48,8 +58,6 @@ else {
         echo "Vous devez entrer une adresse mail";
     }
 
-
-    $email = 'test@exemple.com';
     if (filter_var($email, FILTER_VALIDATE_EMAIL)){
         echo "Cette adresse mail est valide";
     }
@@ -64,7 +72,6 @@ else {
     if ($_POST["Numéro de téléphone"] == NULL) {
         echo "Vous devez entrer un numéro de téléphone";
     }
-
 
 }
 
