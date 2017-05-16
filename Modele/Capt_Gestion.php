@@ -18,7 +18,7 @@ function idOtherHome($db,$idUtilisateur,$idMaisonprincipale){
 
 function addCapteur($db,$idUtilisateur,$idMaison,$type,$idPiece){
 // Ajoute un capteur dans une pièce prédéfinie
-    $sql = 'INSERT INTO capteurs (idUtilisateur,typeCapt,idPiece,idMaison) VALUES ($idUtilisateur,$type,$idPiece,$idMaison)';
+    $sql = 'INSERT INTO capteurs (idUtilisateur,typeCapt,idPiece,idMaison) VALUES ("'.$idUtilisateur.'","'.$type.'","'.$idPiece.'","'.$idMaison.'")';
     $db->exec($sql);
 }
 function delCapteur($db,$idCapteur){
@@ -26,5 +26,15 @@ function delCapteur($db,$idCapteur){
     $sql = 'DELETE ON CASCADE FROM capteurs WHERE idCapteur = "'.$idCapteur.'"';
     $db->exec($sql);
 }
+function viewCapt($db,$idUtilisateur){
+    // Permet d'afficher la liste des capteurs
+    $sql = 'SELECT captType,idCapteur FROM capteurs WHERE idUtilisateur = "'.$idUtilisateur.'"';
+    $db->query($sql);
+    return $sql;
+}
 
+function pieceCapt($db,$idCapteur){
+    // Permet d'affilier à chaques capteurs sa pièce
+    $sql = 'SELECT idPiece FROM capteurs WHERE idCapteur = "'.$idCapteur.'"' ;
+}
 ?>
