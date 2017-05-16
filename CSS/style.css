@@ -82,11 +82,15 @@ ul li a{
 }
 .piece
 {
-	 border: 1px white groove;
-	 color: white;
-	 display: flex;
-	 flex-direction: column;
-
+	border: 1px white groove;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	width: 10em;
+  	padding: 1.2em;
+}
+.pieces{
+  text-align: center;
 }
 .section1
 {
@@ -103,4 +107,10 @@ ul li a{
 .image
 {
 	max-width: 100%;
+}
+.section_ma_maison
+{
+    background-image: url("fleur_fond.jpg"); /* image de fond fixe pour l'instant, personna*/
+    background-repeat: no-repeat;
+	background-size: 100%;
 }
