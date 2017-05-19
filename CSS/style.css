@@ -44,7 +44,6 @@ ul
 	width: auto;
 	margin: 10px auto;
 	padding: auto;
-
 }
 ul li
 {
@@ -92,51 +91,48 @@ ul li a{
 .pieces{
   text-align: center;
 }
+.image
+{
+
+	width: auto;
+	height: 20em;
+}
+aside
+{
+	margin-block-end:  auto;
+}
 .section1
 {
+	display: flex;
 	background-color: #406694;
 	color: white;
+	flex: space-between;
 
+}
+.section1, .section2{
+	height: 20em;
+}
+.section1 p, .section2 p
+{
+	color: white;
+}
+.article1
+{
+	text-align: center;
+	width: 75%;
 }
 .section2
 {
 	background-color: #597EAA;
 	color:white;
+	display: flex;
+	flex: space-between;
 
 }
-.image
-{
-	max-width: 100%;
-}
+
 .section_ma_maison
 {
     background-image: url("fleur_fond.jpg"); /* image de fond fixe pour l'instant, personna*/
     background-repeat: no-repeat;
 	background-size: 100%;
-}
-/*class de la place gestion */
-.aside_gestion
-{
-  background-color: #256da0;
-}
-.aside_gestion p ,h1
-{
-  color:white;
-  text-align: center;
-}
-.section_gestion
-{
-  display:flex;
-  justify-content:flex-start;
-}
-.section_gestion:nth-child(2)
-{
-  flex:1;
-}
-hr
-{
-   border: 0; 
-   height: 2px;
-   color:white; 
-   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255,255, 0.75), rgba(255, 255, 255, 0));
 }
