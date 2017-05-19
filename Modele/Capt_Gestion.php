@@ -37,4 +37,13 @@ function pieceCapt($db,$idCapteur){
     // Permet d'affilier à chaques capteurs sa pièce
     $sql = 'SELECT idPiece FROM capteurs WHERE idCapteur = "'.$idCapteur.'"' ;
 }
+
+function getcapt($db,$idMaison) {
+    //Renvoie l'id (à remplacer par ce que tu veux voir) des capteurs triés par pièces pour une maison donnée (trié par pièce de la pièce 1 à la dernière)
+    $sql = 'SELECT idcapt FROM capteurs WHERE idMaison = "'.$idMaison.'" ORDER BY idPièce';
+    $reponse = $db->query($sql);
+    return $reponse;
+}
+
+
 ?>
