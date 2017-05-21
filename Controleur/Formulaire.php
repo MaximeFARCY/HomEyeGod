@@ -34,12 +34,13 @@ else {
         echo "Vous devez entrer un nom d'utilisateur";
         echo "<br>";
         echo "<br>";
-    }
+    } else {
 
-    if (idUtilisateur($db, $_POST["Nom_utilisateur"])!= NULL){
-        echo "Ce nom d'utilisateur est déjà utilisé";
-        echo "<br>";
-        echo "<br>";
+        if (idUtilisateur($db, $_POST["Nom_utilisateur"]) != NULL) {
+            echo "Ce nom d'utilisateur est déjà utilisé";
+            echo "<br>";
+            echo "<br>";
+        }
     }
 
     if ($_POST["Mot_de_passe"] == NULL) {
@@ -84,29 +85,31 @@ else {
         echo "<br>";
     }
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)){
-        echo "Cette adresse mail est valide";
-        echo "<br>";
-        echo "<br>";
-    }
     else {
-        echo "Cette adresse mail est invalide";
-        echo "<br>";
-        echo "<br>";
-    }
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Cette adresse mail est valide";
+            echo "<br>";
+            echo "<br>";
+        } else {
+            echo "Cette adresse mail est invalide";
+            echo "<br>";
+            echo "<br>";
+            exit;
+        }
 
-    if (idMail($db, $_POST["Email"])!= NULL){
-        echo "Cette adresse mail est déjà utilisée";
-        echo "<br>";
-        echo "<br>";
-    }
+        if (idMail($db, $_POST["Email"]) != NULL) {
+            echo "Cette adresse mail est déjà utilisée";
+            echo "<br>";
+            echo "<br>";
+        }
 
-    if ($_POST["Numero_de_telephone"] == NULL) {
-        echo "Vous devez entrer un numéro de téléphone";
-        echo "<br>";
-        echo "<br>";
-    }
+        if ($_POST["Numero_de_telephone"] == NULL) {
+            echo "Vous devez entrer un numéro de téléphone";
+            echo "<br>";
+            echo "<br>";
+        }
 
+    }
 }
 
 ?>
