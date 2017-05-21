@@ -38,14 +38,14 @@ label
 	float: left;
 	color: #4c74a1;
 }
-ul
+nav ul
 {
 	display: table;
 	width: auto;
 	margin: 10px auto;
 	padding: auto;
 }
-ul li
+nav ul li
 {
 	display: table-cell;
 }
@@ -54,7 +54,7 @@ ul li
 	color: white;
 	text-decoration: none;
 }
-ul li a{
+nav ul li a{
     display: block;
     text-align: center; 
     text-decoration: none;
