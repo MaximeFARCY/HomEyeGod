@@ -1,6 +1,8 @@
 <?php
 // Contrôleur pour le formulaire inscription
 include ("Modele/Verification.php");
+include ("Modele/connexion_db.php");
+include ("Modele/Insertion_BDD.php");
 $email = 'test@exemple.com';
 if ($_POST["valider"]
     AND $_POST["Nom d'utilisateur"]!=NULL
@@ -15,6 +17,10 @@ if ($_POST["valider"]
     AND filter_var($email, FILTER_VALIDATE_EMAIL)
     AND idMail($db, $_POST["Email"])==NULL
     AND $_POST["Numéro de téléphone"]!=NULL ){
+    insertNewUser($db, $_POST["Nom d'utilisateur"], $_POST["Mot de passe"], NULL, NULL, NULL, $_POST["Numéro de téléphone"], NULL);
+    newIdUtilisateur($db);
+    newHome($db, NULL,$_POST["Ville"], NULL, $_POST["Numéro de téléphone"], NULL, NULL, $_POST["Code Postal"]);
+    idHome($db, NULL);
     header("Location : la page compte crée");
     exit;
 }
