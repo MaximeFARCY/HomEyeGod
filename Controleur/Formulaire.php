@@ -18,7 +18,7 @@ if ($_POST["valider"]
     AND idMail($db, $_POST["Email"])==NULL
     AND $_POST["Numéro de téléphone"]!=NULL ){
     insertNewUser($db, $_POST["Nom d'utilisateur"], $_POST["Mot de passe"], NULL, NULL, NULL, $_POST["Numéro de téléphone"], NULL);
-    newIdUtilisateur($db);
+    newIdUtilisateur($db); //sql est censé pouvoir faire l'incrémentation automatiquement
     newHome($db, idUtilisateur($db,$_POST["Nom d'utilisateur"]),$_POST["Ville"], NULL, $_POST["Numéro de téléphone"], NULL, NULL, $_POST["Code Postal"]);
     header("Location : la page compte crée");
     exit;
