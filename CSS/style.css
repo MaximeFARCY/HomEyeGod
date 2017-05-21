@@ -38,14 +38,14 @@ label
     float: left;
     color: #4c74a1;
 }
-ul
+nav ul
 {
     display: table;
     width: auto;
     margin: 10px auto;
     padding: auto;
 }
-ul li
+nav ul li
 {
     display: table-cell;
 }
@@ -54,7 +54,7 @@ ul li
     color: white;
     text-decoration: none;
 }
-ul li a{
+nav ul li a{
     display: block;
     text-align: center;
     text-decoration: none;
@@ -157,6 +157,7 @@ aside
     height : 600px;
 }
 .rectangle_annonce{
+    display: flex;
     border: 2px solide;
     border-color: whitesmoke;
     width : 100%;
@@ -164,17 +165,89 @@ aside
     text-align: center;
     background-color: #256da0;
 }
-.rectangle_showpiece,
-.rectangle_showpage,
-.rectangle_showtool, a
+.rectangle_showpiece p,
+.rectangle_showpage p,
+.rectangle_showtool p
 {
     text-align: center;
     font-size: 1.5em;
     color: lightsteelblue;
 }
-
+.rectangle_flex{
+    display : flex;
+    justify-content: space-around;
+    margin-bottom: 1%;
+}
+.rectangle_showpiece ul,
+.rectangle_showtool ul{
+    margin-top: 20%;
+    display: table;
+    width: auto;
+    padding: auto;
+    list-style:none;
+}
+.rectangle_showpiece ul li a{
+    display: flex;
+    text-decoration: none;
+    margin-bottom: 25%;
+}
+.rectangle_showpiece a {
+    color: white;
+    text-decoration: none;
+}
+.rectangle_showtool ul li p{
+    display: flex;
+    text-decoration: none;
+    margin-bottom: 25%;
+}
+.rectangle_showtool p {
+    color: white;
+    text-decoration: none;
+}
+.rectangle_annonce p{
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    margin:auto;
+}
+.code_page{
+    display : flex;
+    border: 2px solide;
+    border-color: whitesmoke;
+    width : 80%;
+    height : 80%;
+    text-align: center;
+    background-color: white;
+    margin:auto;
+}
+.code_page p{
+    margin: 10%;
+    color:black;
+}
 .titre_page{
     width: 100%;
     height: 100px;
     line-height: 70px;
+}
+.rectangle_showban1{
+    width:50%;
+    background-color: #406694;
+    color: white;
+    text-align: center;
+}
+.rectangle_showban2{
+    width:50%;
+    background-color: #597eaa;
+
+}
+.rectangle_showban1,.rectangle_showban2{
+    border-top: solid white 10px;
+    display: inline-block;
+    height: 300px;
+}
+
+.rectangle_showban12{
+    border-top: solid white 10px;
+    display: inline-block;
+    height: 300px;
 }
