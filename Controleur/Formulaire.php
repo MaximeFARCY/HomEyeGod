@@ -6,7 +6,7 @@ include ("../Modele/Insertion_BDD.php");
 $email = "test@exemple.com";
 if ($_POST["valider"]
     AND $_POST["Nom_utilisateur"]!=NULL
-    AND idUtilisateur($db, $_POST["Nom_utilisateur"])==NULL  //Bizarrement idUtilisateur($db, $_POST["Nom_utilisateur"]) vaut toujours autre chose que NULL
+    AND idUtilisateur($db, $_POST["Nom_utilisateur"])!=NULL  //Bizarrement idUtilisateur($db, $_POST["Nom_utilisateur"]) vaut jamais NULL
     AND $_POST["Mot_de_passe"]!=NULL
     AND $_POST["Confirmation_mot_de_passe"]!=NULL
     AND $_POST["Mot_de_passe"]==$_POST["Confirmation_mot_de_passe"]
@@ -15,7 +15,7 @@ if ($_POST["valider"]
     AND $_POST["Ville"]!=NULL
     AND $_POST["Email"]!= NULL
     AND filter_var($email, FILTER_VALIDATE_EMAIL)
-    AND idMail($db, $_POST["Email"])==NULL
+    AND idMail($db, $_POST["Email"])!=NULL
     AND $_POST["Numero_de_telephone"]!=NULL ){
     insertNewUser($db, $_POST["Nom_utilisateur"], $_POST["Mot_de_passe"], NULL, NULL, NULL, $_POST["Numero_de_telephone"], NULL);
     newIdUtilisateur($db); //sql est censé pouvoir faire l'incrémentation automatiquement
