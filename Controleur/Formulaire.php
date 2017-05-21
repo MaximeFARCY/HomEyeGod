@@ -26,56 +26,85 @@ if ($_POST["valider"]
 
 
 else {
+    echo "Tous les champs n'ont pas été correctement remplis:";
+    echo "<br>";
+    echo "<br>";
 
     if ($_POST["Nom_utilisateur"] == NULL) {
         echo "Vous devez entrer un nom d'utilisateur";
+        echo "<br>";
+        echo "<br>";
     }
 
     if (idUtilisateur($db, $_POST["Nom_utilisateur"])!= NULL){
         echo "Ce nom d'utilisateur est déjà utilisé";
+        echo "<br>";
+        echo "<br>";
     }
 
     if ($_POST["Mot_de_passe"] == NULL) {
         echo "Vous devez entrer un mot de passe";
+        echo "<br>";
+        echo "<br>";
     }
 
     if ($_POST["Confirmation_mot_de_passe"] == NULL) {
         echo "Vous devez confirmer votre mot de passe";
+        echo "<br>";
+        echo "<br>";
     }
 
     if ($_POST["Mot_de_passe"] != $_POST["Confirmation_mot_de_passe"]) {
         echo "Vous n'avez pas rentré le même mot de passe";
+        echo "<br>";
+        echo "<br>";
     }
 
     if ($_POST["Adresse"] == NULL) {
         echo "Vous devez entrer une adresse";
+        echo "<br>";
+        echo "<br>";
     }
 
     if ($_POST["Code_Postal"] == NULL) {
         echo "Vous devez entrer un code Postal";
+        echo "<br>";
+        echo "<br>";
     }
 
     if ($_POST["Ville"] == NULL) {
         echo "Vous devez entrer une ville";
+        echo "<br>";
+        echo "<br>";
     }
 
     if ($_POST["Email"] == NULL) {
         echo "Vous devez entrer une adresse mail";
+        echo "<br>";
+        echo "<br>";
     }
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL)){
         echo "Cette adresse mail est valide";
+        echo "<br>";
+        echo "<br>";
     }
     else {
         echo "Cette adresse mail est invalide";
+        echo "<br>";
+        echo "<br>";
     }
 
     if (idMail($db, $_POST["Email"])!= NULL){
         echo "Cette adresse mail est déjà utilisée";
+        echo "<br>";
+        echo "<br>";
     }
 
     if ($_POST["Numero_de_telephone"] == NULL) {
         echo "Vous devez entrer un numéro de téléphone";
+        echo "<br>";
+        echo "<br>";
     }
 
 }
