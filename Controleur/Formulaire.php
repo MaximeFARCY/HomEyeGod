@@ -19,8 +19,7 @@ if ($_POST["valider"]
     AND $_POST["Numéro de téléphone"]!=NULL ){
     insertNewUser($db, $_POST["Nom d'utilisateur"], $_POST["Mot de passe"], NULL, NULL, NULL, $_POST["Numéro de téléphone"], NULL);
     newIdUtilisateur($db);
-    newHome($db, NULL,$_POST["Ville"], NULL, $_POST["Numéro de téléphone"], NULL, NULL, $_POST["Code Postal"]);
-    idHome($db, NULL);
+    newHome($db, idUtilisateur($db,$_POST["Nom d'utilisateur"]),$_POST["Ville"], NULL, $_POST["Numéro de téléphone"], NULL, NULL, $_POST["Code Postal"]);
     header("Location : la page compte crée");
     exit;
 }
@@ -32,7 +31,7 @@ else {
         echo "Vous devez entrer un nom d'utilisateur";
     }
 
-    if (idUtilisateur($db, $_POST["Nom d'utilisateur"])==$_POST["Nom d'utilisateur"]){
+    if (idUtilisateur($db, $_POST["Nom d'utilisateur"])!= NULL){
         echo "Ce nom d'utilisateur est déjà utilisé";
     }
 
@@ -71,7 +70,7 @@ else {
         echo "Cette adresse mail est invalide";
     }
 
-    if (idMail($db, $_POST["Email"])==$_POST["Email"]){
+    if (idMail($db, $_POST["Email"])!= NULL){
         echo "Cette adresse mail est déjà utilisée";
     }
 
