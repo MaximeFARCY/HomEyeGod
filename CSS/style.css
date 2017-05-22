@@ -198,12 +198,10 @@ aside
 .rectangle_showtool ul li p{
     display: flex;
     text-decoration: none;
-    margin-bottom: 25%;
-}
-.rectangle_showtool p {
     color: white;
     text-decoration: none;
 }
+
 .rectangle_annonce p{
     text-align: center;
     color: white;
@@ -247,7 +245,27 @@ aside
 }
 
 .rectangle_showban12{
-    border-top: solid white 10px;
-    display: inline-block;
-    height: 300px;
+    display : flex;
+    border: 2px solide;
+    border-color: whitesmoke;
+    width : 70%;
+    height : 50%;
+    text-align: center;
+    background-color: white;
+    margin:auto;
+}
+
+.rectangle_showban1 p
+{
+    color:white;
+    margin-top: 50px;
+}
+.rectangle_showban2 p
+{
+    margin-left: 120px;
+    color:white;
+    margin-top: 30px;
+}
+.rectangle_showban2 p label{
+    color:white;
 }
