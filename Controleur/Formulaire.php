@@ -5,6 +5,8 @@ include ("../Modele/connexion_db.php");
 include ("../Modele/Insertion_BDD.php");
 $email = "test@exemple.com";
 if ($_POST["valider"]
+    AND $_POST["Nom"]!=NULL
+    AND $_POST["Prenom"]!=NULL
     AND $_POST["Nom_utilisateur"]!=NULL
     AND idUtilisateur($db, $_POST["Nom_utilisateur"])->rowcount() ==NULL
     AND $_POST["Mot_de_passe"]!=NULL
@@ -29,6 +31,18 @@ else {
     echo "Tous les champs n'ont pas été correctement remplis :";
     echo "<br>";
     echo "<br>";
+
+    if ($_POST["Nom"] == NULL){
+        echo "Vous devez entrer un Nom";
+        echo "<br>";
+        echo "<br>";
+    }
+
+    if ($_POST["Prenom"] == NULL){
+        echo "Vous devez entrer un Prénom";
+        echo "<br>";
+        echo "<br>";
+    }
 
     if ($_POST["Nom_utilisateur"] == NULL) {
         echo "Vous devez entrer un nom d'utilisateur";
