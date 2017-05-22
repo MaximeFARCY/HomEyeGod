@@ -18,7 +18,7 @@ if ($_POST["valider"]
     AND idMail($db, $_POST["Email"])->rowcount()==NULL
     AND $_POST["Numero_de_telephone"]!=NULL ){
     newIdUtilisateur($db);
-    newHome($db, idUtilisateur($db,$_POST["Nom_utilisateur"]),$_POST["Ville"], NULL, $_POST["Numero_de_telephone"], NULL, NULL, $_POST["Code_Postal"]);
+    //newHome($db, idUtilisateur($db,$_POST["Nom_utilisateur"]),$_POST["Ville"], NULL, $_POST["Numero_de_telephone"], NULL, NULL, $_POST["Code_Postal"]);
     insertNewUser($db, $_POST["Nom_utilisateur"], $_POST["Mot_de_passe"], NULL, NULL, NULL, $_POST["Numero_de_telephone"], NULL);
     header('Location: ../HTML/compte_cree.html');
     exit;
