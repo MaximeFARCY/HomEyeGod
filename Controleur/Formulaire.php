@@ -6,7 +6,7 @@ include ("../Modele/Insertion_BDD.php");
 $email = "test@exemple.com";
 if ($_POST["valider"]
     AND $_POST["Nom_utilisateur"]!=NULL
-    AND idUtilisateur($db, $_POST["Nom_utilisateur"])!=NULL  //Bizarrement idUtilisateur($db, $_POST["Nom_utilisateur"]) vaut jamais NULL
+    AND idUtilisateur($db, $_POST["Nom_utilisateur"])->rowcount() ==NULL  //Bizarrement idUtilisateur($db, $_POST["Nom_utilisateur"]) vaut jamais NULL
     AND $_POST["Mot_de_passe"]!=NULL
     AND $_POST["Confirmation_mot_de_passe"]!=NULL
     AND $_POST["Mot_de_passe"]==$_POST["Confirmation_mot_de_passe"]
@@ -15,10 +15,9 @@ if ($_POST["valider"]
     AND $_POST["Ville"]!=NULL
     AND $_POST["Email"]!= NULL
     AND filter_var($email, FILTER_VALIDATE_EMAIL)
-    AND idMail($db, $_POST["Email"])!=NULL
+    AND idMail($db, $_POST["Email"])->rowcount()==NULL
     AND $_POST["Numero_de_telephone"]!=NULL ){
     insertNewUser($db, $_POST["Nom_utilisateur"], $_POST["Mot_de_passe"], NULL, NULL, NULL, $_POST["Numero_de_telephone"], NULL);
-    newIdUtilisateur($db); //sql est censé pouvoir faire l'incrémentation automatiquement
     //newHome($db, idUtilisateur($db,$_POST["Nom_utilisateur"]),$_POST["Ville"], NULL, $_POST["Numero_de_telephone"], NULL, NULL, $_POST["Code_Postal"]);
     header('Location: ../HTML/compte_cree.html');
     exit;
@@ -36,7 +35,7 @@ else {
         echo "<br>";
     } else {
 
-        if (idUtilisateur($db, $_POST["Nom_utilisateur"]) == NULL) {
+        if (idUtilisateur($db, $_POST["Nom_utilisateur"])->rowcount() != NULL) {
             echo "Ce nom d'utilisateur est déjà utilisé";
             echo "<br>";
             echo "<br>";
@@ -92,7 +91,7 @@ else {
 
     else {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)==true) {
-            if (idMail($db, $_POST["Email"]) == NULL) {
+            if (idMail($db, $_POST["Email"])->rowcount() != NULL) {
                 echo "Cette adresse mail est déjà utilisée";
                 echo "<br>";
                 echo "<br>";
