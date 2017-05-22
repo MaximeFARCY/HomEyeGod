@@ -49,7 +49,7 @@ ul li
 {
 	display: table-cell;
 }
-#navigation a 
+.navigation a
 {
 	color: white;
 	text-decoration: none;
