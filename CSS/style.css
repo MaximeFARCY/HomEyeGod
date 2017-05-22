@@ -269,3 +269,8 @@ aside
 .rectangle_showban2 p label {
     color:white;
 }
+.bouton {
+    color:white;
+    text-align: right;
+    margin-right:15%;
+}
