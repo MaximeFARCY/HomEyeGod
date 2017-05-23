@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 12 Mai 2017 à 07:50
+-- Généré le :  Mar 23 Mai 2017 à 07:41
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.5.38
 
@@ -72,7 +72,6 @@ CREATE TABLE `alerte` (
 CREATE TABLE `capteurs` (
   `idCapteur` int(11) NOT NULL,
   `idUtilisateur` int(11) NOT NULL,
-  `idData` int(11) NOT NULL,
   `Etat` tinyint(1) NOT NULL,
   `Type` int(11) NOT NULL,
   `idPièce` int(11) NOT NULL,
@@ -127,7 +126,10 @@ CREATE TABLE `maisons` (
   `TypeVoie` int(11) NOT NULL,
   `code_postal` int(5) NOT NULL,
   `Ville` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `Pays` varchar(40) COLLATE utf8_unicode_ci NOT NULL
+  `Pays` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Superficie` int(11) NOT NULL,
+  `Nombre_Pieces` int(11) NOT NULL,
+  `Nbre_Pers` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -139,7 +141,8 @@ CREATE TABLE `maisons` (
 CREATE TABLE `pieces` (
   `idPiece` int(11) NOT NULL,
   `Nom` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `idMaison` int(11) NOT NULL
+  `idMaison` int(11) NOT NULL,
+  `TypePièce` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
