@@ -1,0 +1,70 @@
+*
+{
+	font-family: "Courier New";
+}
+
+header
+{
+	color: blue;
+	margin-left: 70px;
+}
+nav
+{
+	background-color: blue;
+	bottom: 200;
+	width: 100%;
+	margin-left: 0px;
+}
+p, h1
+{
+  color: blue;
+}
+h2
+{
+	text-align: center;
+	color: blue;
+}
+
+form
+{
+	line-height:40px;
+	margin-left: 70px;
+}
+label
+{
+	display: block;
+	width: 300px;
+	float: left;
+	color: blue;
+}
+ul
+{
+	display: table;
+	width: 100%;
+	margin: 10px auto;
+	padding: auto;
+
+}
+ul li
+{
+	display: table-cell;
+
+
+}
+#navigation a 
+{
+	color: white;
+	text-decoration: none;
+}
+ul li a{
+    display: block;
+    text-align: center; 
+    text-decoration: none;
+    padding: 17px 8px 17px 8px;
+
+}
+section
+{
+	display: flex;
+    justify-content: space-around;
+}
