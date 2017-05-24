@@ -1,4 +1,4 @@
-HomEyeGod
+﻿HomEyeGod
 
 APP G7B Project
 
@@ -45,5 +45,3 @@ $git commit -m 'description de la mise à jours' pour valider localement une mis
 $ git push permet de mettre en ligne ses mises à jours (préalablements validées via le commit sinon ça ne passe pas)
 
 $ git pull permet de récupérer les dernières mises à jours, à faire à chaque début de session pour être sûre de bosser sur la dernière version de notre fichier
-
-Voili voilou, si vous galérez, allez bien vous faire foutre! je vous pisse à la raie faces de culs!
