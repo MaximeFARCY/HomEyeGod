@@ -1,0 +1,195 @@
+*
+{
+    font-family: "Arial";
+}
+
+header
+{
+    color: #4c74a1;
+    margin-left: 20px;
+    height: 20%;
+}
+
+nav
+{
+    background-color: #4c74a1;
+    bottom: 200;
+    margin-left: auto;
+}
+
+p, h1
+{
+    color: #4c74a1;
+}
+
+h2
+{
+    text-align: center;
+    color: #4c74a1;
+    font-size: 2em;
+}
+
+form
+{
+    line-height:40px;
+    margin-left: 70px;
+}
+
+label
+{
+    display: block;
+    width: 300px;
+    float: left;
+    color: #4c74a1;
+}
+
+nav ul
+{
+    display: table;
+    width: auto;
+    margin: 10px auto;
+    padding: auto;
+}
+
+nav ul li
+{
+    display: table-cell;
+}
+
+#navigation a
+{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+nav ul li a
+{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 1em 2em 1em 2em;
+}
+
+
+
+.rectangle_showpiece
+{
+    background-color: #406694;
+    width : 20%;
+}
+
+.rectangle_showpage
+{
+    background-color: #7192bb;
+    width : 48%;
+}
+
+.rectangle_showtool
+{
+    background-color: #597eaa;
+    width : 30%;
+}
+
+.rectangle_showpiece,
+.rectangle_showpage,
+.rectangle_showtool
+{
+    border-top: solid white 10px;
+    display: inline-block;
+    height : 600px;
+}
+
+.rectangle_annonce
+{
+    display: flex;
+    border: 2px solide;
+    border-color: whitesmoke;
+    width : 100%;
+    height : 100px;
+    text-align: center;
+    background-color: #256da0;
+}
+
+.rectangle_showpiece p,
+.rectangle_showpage p,
+.rectangle_showtool p
+{
+    text-align: center;
+    font-size: 1.5em;
+    color: lightsteelblue;
+}
+
+.rectangle_flex{
+    display : flex;
+    justify-content: space-around;
+    margin-bottom: 1%;
+}
+
+.rectangle_showpiece ul,
+.rectangle_showtool ul{
+    margin-top: 20%;
+    display: table;
+    width: auto;
+    padding: auto;
+    list-style:none;
+}
+
+.rectangle_showpiece ul li a{
+    display: flex;
+    text-decoration: none;
+    margin-bottom: 25%;
+}
+
+.rectangle_showpiece a {
+    color: white;
+    text-decoration: none;
+}
+
+.rectangle_showtool ul li p{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+}
+
+.rectangle_annonce p
+{
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    margin:auto;
+}
+
+/*
+.code_page
+{
+    display : flex;
+    border: 2px solide;
+    border-color: whitesmoke;
+    width : 80%;
+    height : 80%;
+    text-align: center;
+    background-color: white;
+    margin:auto;
+}
+*/
+
+.code_page p
+{
+    margin: 10%;
+    color:black;
+}
+
+.code_page h3
+{
+    margin: 10%;
+    color: black;
+}
+
+.titre_page{
+    width: 100%;
+    height: 100px;
+    line-height: 70px;
+}
