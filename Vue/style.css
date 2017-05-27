@@ -137,10 +137,11 @@ nav ul li a
     list-style:none;
 }
 
-.rectangle_showpiece ul li a{
+.rectangle_showpiece ul li p{
     display: flex;
     text-decoration: none;
     margin-bottom: 25%;
+    color: White;
 }
 
 .rectangle_showpiece a {
@@ -161,6 +162,12 @@ nav ul li a
     color: white;
     font-size: 3em;
     margin:auto;
+}
+.rectangle_liste ul li { display: table-column;}
+.rectangle_liste li
+{list-style-type: none;}
+.rectangle_liste li:before {
+    content: "-"
 }
 
 /*
