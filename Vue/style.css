@@ -76,6 +76,7 @@ nav ul li a
     padding: 1em 2em 1em 2em;
 }
 
+/*Annonce*/
 .rectangle_annonce
 {
     display: flex;
@@ -87,34 +88,41 @@ nav ul li a
     background-color: #256da0;
 }
 
+.rectangle_annonce p
+{
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    margin:auto;
+}
 
 /*Gestion Capteurs*/
 /*ALL*/
-.rectangle_flex{
+.gestion_capt{
     display : flex;
     justify-content: space-around;
     margin-bottom: 1%;
 }
 
-.rectangle_showpiece,
-.rectangle_showgeneral,
-.rectangle_showcapt
+.showpiece,
+.showgeneral,
+.showcapt
 {
     border-top: solid white 10px;
     height : 600px;
 }
 
-.rectangle_showpiece p,
-.rectangle_showgeneral p,
-.rectangle_showcapt p
+.showpiece p,
+.showgeneral p,
+.showcapt p
 {
     text-align: center;
     font-size: 1.5em;
     color: lightsteelblue;
 }
 
-.rectangle_showpiece,
-.rectangle_showcapt
+.showpiece,
+.showcapt
 {
     background-color: #406694;
     width : 20%;
@@ -122,7 +130,7 @@ nav ul li a
 
 /*SHOWPIECE*/
 
-.rectangle_listepièces li{
+.listepiece li{
     display: list-item;
     text-decoration: none;
     margin-bottom: 25%;
@@ -131,7 +139,7 @@ nav ul li a
 
 /*SHOWCAPT*/
 
-.rectangle_listecapt ul {
+.listecapt ul {
     margin-top: 20%;
     display: table;
     width: auto;
@@ -139,7 +147,7 @@ nav ul li a
     list-style:none;
 }
 
-.rectangle_listecapt li{
+.listecapt li{
     display: list-item;
     text-decoration: none;
     color: white;
@@ -157,33 +165,14 @@ nav ul li a
 }
 
 /*SHOWGENERAL*/
-.rectangle_showgeneral
+.showgeneral
 {
     background-color: #7192bb;
     width : 60%;
 }
 
-.rectangle_annonce p
-{
-    text-align: center;
-    color: white;
-    font-size: 3em;
-    margin:auto;
-}
 
-/*
-.code_page
-{
-    display : flex;
-    border: 2px solide;
-    border-color: whitesmoke;
-    width : 80%;
-    height : 80%;
-    text-align: center;
-    background-color: white;
-    margin:auto;
-}
-*/
+
 
 .code_page p
 {
