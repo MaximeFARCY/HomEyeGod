@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 23 Mai 2017 à 07:41
+-- Généré le :  Mer 10 Mai 2017 à 08:24
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.5.38
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `actionneurs` (
   `idActionneur` int(11) NOT NULL,
-  `idCapteur` int(11) NOT NULL,
+  `Etat` int(11) NOT NULL,
   `Type` int(11) NOT NULL,
   `idMaison` int(11) NOT NULL,
   `idPiece` int(11) NOT NULL
@@ -46,6 +46,24 @@ CREATE TABLE `actions` (
   `idActionneur` int(11) NOT NULL,
   `idUtilisateur` int(11) NOT NULL,
   `Etatdemande` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `adresse`
+--
+
+CREATE TABLE `adresse` (
+  `idAdresse` int(11) NOT NULL,
+  `idMaison` int(11) NOT NULL,
+  `idUtilisateur` int(11) NOT NULL,
+  `Ville` varchar(40) CHARACTER SET latin1 NOT NULL,
+  `TypeVoie` int(11) NOT NULL,
+  `Num` int(11) NOT NULL,
+  `NomVoie` varchar(40) CHARACTER SET latin1 NOT NULL,
+  `Pays` varchar(40) CHARACTER SET latin1 NOT NULL,
+  `CodePostal` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -72,6 +90,7 @@ CREATE TABLE `alerte` (
 CREATE TABLE `capteurs` (
   `idCapteur` int(11) NOT NULL,
   `idUtilisateur` int(11) NOT NULL,
+  `idData` int(11) NOT NULL,
   `Etat` tinyint(1) NOT NULL,
   `Type` int(11) NOT NULL,
   `idPièce` int(11) NOT NULL,
@@ -86,7 +105,7 @@ CREATE TABLE `capteurs` (
 
 CREATE TABLE `confidence` (
   `ConfidenceValue` int(11) NOT NULL,
-  `ConfidenceName` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+  `ConfidenceName` varchar(10) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -98,7 +117,8 @@ CREATE TABLE `confidence` (
 CREATE TABLE `donnees` (
   `idData` int(11) NOT NULL,
   `idCapteur` int(11) NOT NULL,
-  `Datas` longblob NOT NULL COMMENT 'Fichier avec: Date et heure + données'
+  `Date-Heure` datetime NOT NULL,
+  `Datas` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -109,7 +129,7 @@ CREATE TABLE `donnees` (
 
 CREATE TABLE `etattopic` (
   `EtatValue` int(11) NOT NULL,
-  `EtatName` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `EtatName` varchar(20) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -120,16 +140,8 @@ CREATE TABLE `etattopic` (
 
 CREATE TABLE `maisons` (
   `idMaison` int(11) NOT NULL,
-  `idUtilisateur` int(11) NOT NULL,
-  `numero_voie` int(11) NOT NULL,
-  `Voie` int(11) NOT NULL,
-  `TypeVoie` int(11) NOT NULL,
-  `code_postal` int(5) NOT NULL,
-  `Ville` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `Pays` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `Superficie` int(11) NOT NULL,
-  `Nombre_Pieces` int(11) NOT NULL,
-  `Nbre_Pers` int(11) NOT NULL
+  `idAdresse` int(11) NOT NULL,
+  `idUtilisateur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -140,9 +152,8 @@ CREATE TABLE `maisons` (
 
 CREATE TABLE `pieces` (
   `idPiece` int(11) NOT NULL,
-  `Nom` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `idMaison` int(11) NOT NULL,
-  `TypePièce` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+  `Nom` varchar(15) CHARACTER SET latin1 NOT NULL,
+  `idMaison` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -164,11 +175,11 @@ CREATE TABLE `roles` (
 
 CREATE TABLE `topics` (
   `idTopic` int(11) NOT NULL,
-  `Titre` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Message` text COLLATE utf8_unicode_ci NOT NULL,
+  `Titre` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `Message` text CHARACTER SET latin1 NOT NULL,
   `idUtilisateur` int(11) NOT NULL,
   `Comptlike` int(11) NOT NULL,
-  `Reponses` text COLLATE utf8_unicode_ci NOT NULL,
+  `Reponses` text CHARACTER SET latin1 NOT NULL,
   `Etat` int(11) NOT NULL,
   `Typetopic` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -203,7 +214,7 @@ CREATE TABLE `typetopic` (
 
 CREATE TABLE `typevoie` (
   `TypeValue` int(11) NOT NULL,
-  `TypeName` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `TypeName` varchar(20) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -215,16 +226,13 @@ CREATE TABLE `typevoie` (
 CREATE TABLE `utilisateurs` (
   `idUtilisateur` int(11) NOT NULL,
   `Rôles` int(1) DEFAULT '0' COMMENT 'User/SuperUser/SuperRoot',
-  `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Prénom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `idAdressePrincipale` int(11) NOT NULL,
-  `Numero` text COLLATE utf8_unicode_ci NOT NULL,
-  `Mobile` text COLLATE utf8_unicode_ci NOT NULL,
-  `Mail` text COLLATE utf8_unicode_ci NOT NULL,
+  `Nom` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `Prénom` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `idAdresse` int(11) NOT NULL,
+  `Numero` text CHARACTER SET latin1 NOT NULL,
+  `Mail` text CHARACTER SET latin1 NOT NULL,
   `Factures` mediumblob NOT NULL,
-  `Confidence` int(11) DEFAULT '0',
-  `NomUtilisateur` text COLLATE utf8_unicode_ci NOT NULL,
-  `Mdp` text COLLATE utf8_unicode_ci NOT NULL
+  `Confidence` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Utilisateurs';
 
 --
@@ -242,6 +250,12 @@ ALTER TABLE `actionneurs`
 --
 ALTER TABLE `actions`
   ADD PRIMARY KEY (`idAction`);
+
+--
+-- Index pour la table `adresse`
+--
+ALTER TABLE `adresse`
+  ADD PRIMARY KEY (`idAdresse`);
 
 --
 -- Index pour la table `alerte`
@@ -330,6 +344,11 @@ ALTER TABLE `utilisateurs`
 --
 ALTER TABLE `actions`
   MODIFY `idAction` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `adresse`
+--
+ALTER TABLE `adresse`
+  MODIFY `idAdresse` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `alerte`
 --

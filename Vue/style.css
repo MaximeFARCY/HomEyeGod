@@ -1,231 +1,465 @@
 *
+
 {
-	font-family: "Arial";
+
+    font-family: "Arial";
+
+}
+
+body
+{
+    margin: auto;
+    padding: auto;
 }
 
 header
+
 {
-	color: #4c74a1;
-	margin-left: 20px;
-	height: 20%;
+
+    color: #4c74a1;
+
+    margin-left: 20px;
+
+    height: 20%;
+
 }
+
 nav
+
 {
-	background-color: #4c74a1;
-	bottom: 200;
-	margin-left: auto;
+
+    background-color: #4c74a1;
+
+    bottom: auto;
+
+    margin-left: auto;
+
 }
+
 p, h1
+
 {
-  color: #4c74a1;
+
+    color: #4c74a1;
+
 }
+
 h2
+
 {
-	text-align: center;
-	color: #4c74a1;
-	font-size: 2em;
+
+    text-align: center;
+
+    color: #4c74a1;
+
+    font-size: 2em;
+
 }
+
+
 
 form
+
 {
-	line-height:40px;
-	margin-left: 70px;
+
+    line-height:40px;
+
+    margin-left: 70px;
+
 }
+
 label
+
 {
-	display: block;
-	width: 300px;
-	float: left;
-	color: #4c74a1;
-}
-ul
-{
-	display: table;
-	width: auto;
-	margin: 10px auto;
-	padding: auto;
-}
-ul li
-{
-	display: table-cell;
-}
-.navigation a
-{
-	color: white;
-	text-decoration: none;
-}
-ul li a{
+
     display: block;
-    text-align: center; 
-    text-decoration: none;
-    padding: 1em 2em 1em 2em;
+
+    width: 300px;
+
+    float: left;
+
+    color: #4c74a1;
+
 }
+
+ul
+
+{
+
+    display: table;
+
+    width: auto;
+
+    margin: 10px auto;
+
+    padding: auto;
+
+}
+
+ul li
+
+{
+
+    display: table-cell;
+
+}
+
+.navigation a
+
+{
+
+    text-decoration: none;
+
+}
+
+ul li a{
+
+    color: white;
+
+    text-decoration: none;
+
+    text-align: left;
+
+    display: block;
+
+    padding: 1em 8em 1em 10em;
+
+}
+
+
 
 .button
+
 {
-	text-align: center;
+
+    text-align: center;
+
 }
+
 .flotteG
+
 {
-	float: left;
+
+    float: left;
+
 }
+
 .flotteD
+
 {
-	float: right;
+
+    float: right;
+
 }
+
+
 
 .section_inscription
-{
-	display: flex;
-    justify-content: space-around;
-}
-.piece
-{
-	border: 1px white groove;
-	color: white;
-	display: flex;
-	flex-direction: column;
-	width: 10em;
-  	padding: 1.2em;
-}
-.pieces{
-  text-align: center;
-}
-.image
+
 {
 
-	width: auto;
-	height: 20em;
+    display: flex;
+
+    justify-content: space-around;
+
 }
-aside
+
+.piece
+
 {
-	margin-block-end:  auto;
+
+    border: 1px white groove;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 10em;
+
+    padding: 1.2em;
+
 }
+
+.pieces{
+
+    text-align: center;
+
+}
+
+.image
+
+{
+
+
+
+    width: auto;
+
+    height: 20em;
+
+}
+
+aside
+
+{
+
+    margin-block-end:  auto;
+
+}
+
+
 
 /* style page d'acceuil*/
+
 .section1
+
 {
-	display: flex;
-	background-color: #406694;
-	color: white;
-	flex: space-between;
+
+    display: flex;
+
+    background-color: #406694;
+
+    color: white;
+
+    flex: space-between;
+
+
 
 }
+
 .section1, .section2{
-	height: 20em;
+
+    height: 20em;
+
 }
+
 .section1 p, .section2 p
+
 {
-	color: white;
+
+    color: white;
+
 }
+
 .article1
+
 {
-	text-align: center;
-	width: 75%;
+
+    text-align: center;
+
+    width: 75%;
+
 }
+
 .section2
+
 {
-	background-color: #597EAA;
-	color:white;
-	display: flex;
-	flex: space-between;
+
+    background-color: #597EAA;
+
+    color:white;
+
+    display: flex;
+
+    flex: space-between;
+
 }
-.contact_c p 
+
+.contact_c p
+
 {
-	color: black;
-	font-size: 20px;
-	font-weight: normal;
+
+    color: black;
+
+    font-size: 20px;
+
+    font-weight: normal;
+
 }
+
 .contact_c h2
+
 {
-	color: black;
+
+    color: black;
+
 }
+
+
 
 /*css d'une autre page */
+
 .section_ma_maison
+
 {
+
     background-image: url("fleur_fond.jpg"); /* image de fond fixe pour l'instant, personna*/
+
     background-repeat: no-repeat;
-	background-size: 100%;
+
+    background-size: 100%;
+
 }
 
+
+
 .navbandeau
+
 {
-	background-color: #4c74a1; 		/*bleu stylé*/
+
+    background-color: #4c74a1; 		/*bleu stylé*/
+
     display: flex; 					/*propriété flex*/
+
     justify-content: space-around;
+
     flex-wrap: nowrap;
+
 }
+
+
+
+
 
 
 
 .abandeau
+
 {
-	color: white;				/*les liens du bandeau en gras, non-souligné, et blanc*/
-	text-decoration:none;
+
+    color: white;				/*les liens du bandeau en gras, non-souligné, et blanc*/
+
+    text-decoration:none;
+
     font-weight: bold;
+
 }
+
+
+
 
 
 .libandeau
-{ 
-	display : inline;
-	padding : 0 2em; /* Pour espacer les boutons entre eux */
-	text-align: center;
+
+{
+
+    display : inline;
+
+    padding : 0 2em; /* Pour espacer les boutons entre eux */
+
+    text-align: center;
+
 }
+
+
 
 .sectionactions
+
 {
-  text-align: center;
+
+    text-align: center;
+
 }
 
+
+
 .sectionactions li
+
 {
-	border: 1px #4c74a1 groove;
-	color: #4c74a1;
-	display: flex;
-	flex-direction: column;
-	width: 10em;
-  	padding: 1.2em;
-  	font-weight: bold;
+
+    border: 1px #4c74a1 groove;
+
+    color: #4c74a1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 10em;
+
+    padding: 1.2em;
+
+    font-weight: bold;
+
 }
+
+
+
 
 
 .sectionpieces
+
 {
-	border: 2px #4c74a1 groove;
-	width: 18em;
-	height: 26em;
-	text-align: center;
+
+    border: 2px #4c74a1 groove;
+
+    width: 18em;
+
+    height: 26em;
+
+    text-align: center;
+
 }
+
+
+
 
 
 .sectionpieces li
-{
-	border-bottom: 1px #4c74a1 groove;
-	color: #4c74a1;
-	display: flex;
-	flex-direction: column;
-	width: 7em;
-  	padding: 1.2em;
-  	font-weight: bold;
-} 
 
-.sectioncapteurs
 {
-	border: 2px #4c74a1 groove;
-	width: 24em;
-	height: 26em;
-	text-align: center;
+
+    border-bottom: 1px #4c74a1 groove;
+
+    color: #4c74a1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 7em;
+
+    padding: 1.2em;
+
+    font-weight: bold;
+
 }
 
-.sectioncapteurs li
+
+
+.sectioncapteurs
+
 {
-	border-bottom: 1px #4c74a1 groove;
-	color: #4c74a1;
-	display: flex;
-	flex-direction: column;
-	width: 10em;
-  	padding: 1.2em;
-  	font-weight: bold;
+
+    border: 2px #4c74a1 groove;
+
+    width: 24em;
+
+    height: 26em;
+
+    text-align: center;
+
+}
+
+
+
+.sectioncapteurs li
+
+{
+
+    border-bottom: 1px #4c74a1 groove;
+
+    color: #4c74a1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 10em;
+
+    padding: 1.2em;
+
+    font-weight: bold;
+
 }
