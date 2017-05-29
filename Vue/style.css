@@ -3,22 +3,17 @@
 {
     font-family: "Arial";
 }
+
 body{
     margin:auto;
     padding:auto;
 }
+
 header
 {
     color: #4c74a1;
     margin-left: 20px;
     height: 20%;
-}
-
-nav
-{
-    background-color: #4c74a1;
-    bottom: 200;
-    margin-left: auto;
 }
 
 p, h1
@@ -47,6 +42,18 @@ label
     color: #4c74a1;
 }
 
+aside
+{
+    margin-block-end:  auto;
+}
+
+nav
+{
+    background-color: #4c74a1;
+    bottom: 200;
+    margin-left: auto;
+}
+
 nav ul
 {
     display: table;
@@ -60,15 +67,35 @@ nav ul li
     display: table-cell;
 }
 
-#navigation a
+nav ul li a
 {
-    color: white;
+    display: block;
+    text-align: center;
     text-decoration: none;
+    padding: 1em 2em 1em 2em;
 }
 
+label
+{
+    display: block;
+    width: 300px;
+    float: left;
+    color: #4c74a1;
+}
+ul
+{
+    display: table;
+    width: auto;
+    margin: 10px auto;
+    padding: auto;
+}
 
+ul li
+{
+    display: table-cell;
+}
 
-nav ul li a
+ul li a
 {
     display: block;
     text-align: center;
@@ -197,63 +224,16 @@ nav ul li a
 	font-family: "Arial";
 }
 
-header
+/*Navigation*/
+#navigation a
 {
-	color: #4c74a1;
-	margin-left: 20px;
-	height: 20%;
+    color: white;
+    text-decoration: none;
 }
-nav
-{
-	background-color: #4c74a1;
-	bottom: 200;
-	margin-left: auto;
-}
-p, h1
-{
-  color: #4c74a1;
-}
-h2
-{
-	text-align: center;
-	color: #4c74a1;
-	font-size: 2em;
-}
-
-form
-{
-	line-height:40px;
-	margin-left: 70px;
-}
-label
-{
-	display: block;
-	width: 300px;
-	float: left;
-	color: #4c74a1;
-}
-ul
-{
-	display: table;
-	width: auto;
-	margin: 10px auto;
-	padding: auto;
-}
-ul li
-{
-	display: table-cell;
-}
-
 .navigation a
 {
 	color: white;
 	text-decoration: none;
-}
-ul li a{
-    display: block;
-    text-align: center; 
-    text-decoration: none;
-    padding: 1em 2em 1em 2em;
 }
 
 .button
@@ -291,10 +271,6 @@ ul li a{
 
 	width: auto;
 	height: 20em;
-}
-aside
-{
-	margin-block-end:  auto;
 }
 
 /* style page d'acceuil*/
