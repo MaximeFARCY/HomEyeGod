@@ -12,7 +12,7 @@ header
 nav
 {
 	background-color: #4c74a1;
-	bottom: 200;
+	bottom: auto;
 	margin-left: auto;
 }
 p, h1
@@ -51,14 +51,15 @@ ul li
 }
 .navigation a
 {
-	color: white;
 	text-decoration: none;
 }
 ul li a{
-    display: block;
-    text-align: center; 
-    text-decoration: none;
-    padding: 1em 2em 1em 2em;
+	color: white;
+	text-decoration: none;
+    text-align: center;
+	display: block
+
+    padding: 1em 8em 1em 10em;
 }
 
 .button
