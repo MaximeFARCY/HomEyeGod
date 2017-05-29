@@ -2,7 +2,10 @@
 {
 	font-family: "Arial";
 }
-
+body{
+	padding: auto;
+	margin: auto;
+}
 header
 {
 	color: #4c74a1;
@@ -12,7 +15,7 @@ header
 nav
 {
 	background-color: #4c74a1;
-	bottom: 200;
+	bottom: auto;
 	margin-left: auto;
 }
 p, h1
@@ -51,14 +54,16 @@ ul li
 }
 .navigation a
 {
-	color: white;
+
 	text-decoration: none;
 }
 ul li a{
+
+	color: white;
     display: block;
     text-align: center; 
     text-decoration: none;
-    padding: 1em 2em 1em 2em;
+    padding: 1em 8em 1em 10em;
 }
 
 .button
