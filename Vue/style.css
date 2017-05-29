@@ -98,7 +98,7 @@ nav ul li a
 .rectangle_showtool
 {
     border-top: solid white 10px;
-    display: inline-block;
+    /*display: inline-block;*/
     height : 600px;
 }
 
@@ -128,7 +128,6 @@ nav ul li a
     margin-bottom: 1%;
 }
 
-.rectangle_showpiece ul,
 .rectangle_showtool ul{
     margin-top: 20%;
     display: table;
@@ -137,16 +136,16 @@ nav ul li a
     list-style:none;
 }
 
-.rectangle_showpiece ul li p{
-    display: flex;
+.rectangle_showpiece ul li{
+    display: list-item;
     text-decoration: none;
     margin-bottom: 25%;
     color: White;
 }
-
-.rectangle_showpiece a {
-    color: white;
-    text-decoration: none;
+.ajout_capt p {
+    text-align: center;
+    font-size: 1em;
+    color: lightsteelblue;
 }
 
 .rectangle_showtool ul li p{
@@ -253,6 +252,7 @@ ul li
 {
 	display: table-cell;
 }
+
 .navigation a
 {
 	color: white;
