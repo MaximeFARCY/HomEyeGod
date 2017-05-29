@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>
-            <a href="home_page.html"><img src="..\Vue\Bank\logo-accueilDiv2.png" height="15%" width="15%" alt="retour vers l'accueil" /></a>
+            <a href="home_page.html"><img src="../Vue/Bank/logo-accueilDiv2.png" height="15%" width="15%" alt="retour vers l'accueil" /></a>
         </h1>
     </header>
     <nav>
@@ -34,8 +34,8 @@
                 <li>Chambre d'Eliott</li>
                 <li>Salle de bain</li>
             </ul>
-            <div class="ajout_capt">
-                <p><a href="">+ Ajouter une pièce</a></p>
+            <div class="ajout_piece">
+                <p>+ Ajouter une pièce</p>
             </div>
         </div>
 
@@ -54,17 +54,19 @@
                 <p>Chambre de Jimmy, Fenêtre 1, ouverture à XXhXX</p>
                 <p>+ Ajouter une programmation</p>
         </div>
-
+        <!-- récupérer les noms de capteurs dans la BD puis ouvrir en js un div correspondant aux données -->
         <div class="showcapt">
             <p>Capteurs</p>
             <ul class="listecapt">
-                <li><p>Température</p></li>
-                <li><p>Humidité</p></li>
-                <li><p>Luminosité</p></li>
-                <li><p>Présence</p></li>
-                <li><p>Caméras</p></li>
-                <li><p>+ Ajouter un capteur</p></li>
+                <li>Température</li>
+                <li>Humidité</li>
+                <li>Luminosité</li>
+                <li>Présence</li>
+                <li>Caméras</li>
             </ul>
+            <div class="ajout_capt">
+                <p>+ Ajouter un capteur</p>
+            </div>
         </div>
     </div>
 </body>

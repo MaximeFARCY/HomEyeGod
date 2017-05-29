@@ -82,6 +82,7 @@ label
     float: left;
     color: #4c74a1;
 }
+
 ul
 {
     display: table;
@@ -164,6 +165,14 @@ ul li a
     color: White;
 }
 
+/*AJOUTPIECE*/
+.ajout_piece p {
+    text-align: center;
+    font-size: 1em;
+    color: lightsteelblue;
+}
+
+
 /*SHOWCAPT*/
 
 .listecapt ul {
@@ -177,11 +186,9 @@ ul li a
 .listecapt li{
     display: list-item;
     text-decoration: none;
-    color: white;
-    margin-bottom: 25%:
-    list-style-type: none;
+    margin-bottom: 25%;
+    color: White;
 }
-
 
 
 /*AJOUTCAPT*/
@@ -191,6 +198,7 @@ ul li a
     color: lightsteelblue;
 }
 
+
 /*SHOWGENERAL*/
 .showgeneral
 {
@@ -198,6 +206,10 @@ ul li a
     width : 60%;
 }
 
+.showgeneral h3
+{
+    margin-left: 5%;
+}
 
 
 
