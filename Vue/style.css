@@ -3,7 +3,10 @@
 {
     font-family: "Arial";
 }
-
+body{
+    margin:auto;
+    padding:auto;
+}
 header
 {
     color: #4c74a1;
@@ -73,35 +76,6 @@ nav ul li a
     padding: 1em 2em 1em 2em;
 }
 
-
-
-.rectangle_showpiece
-{
-    background-color: #406694;
-    width : 20%;
-}
-
-.rectangle_showpage
-{
-    background-color: #7192bb;
-    width : 48%;
-}
-
-.rectangle_showtool
-{
-    background-color: #597eaa;
-    width : 30%;
-}
-
-.rectangle_showpiece,
-.rectangle_showpage,
-.rectangle_showtool
-{
-    border-top: solid white 10px;
-    /*display: inline-block;*/
-    height : 600px;
-}
-
 .rectangle_annonce
 {
     display: flex;
@@ -113,22 +87,51 @@ nav ul li a
     background-color: #256da0;
 }
 
-.rectangle_showpiece p,
-.rectangle_showpage p,
-.rectangle_showtool p
-{
-    text-align: center;
-    font-size: 1.5em;
-    color: lightsteelblue;
-}
 
+/*Gestion Capteurs*/
+/*ALL*/
 .rectangle_flex{
     display : flex;
     justify-content: space-around;
     margin-bottom: 1%;
 }
 
-.rectangle_showtool ul{
+.rectangle_showpiece,
+.rectangle_showgeneral,
+.rectangle_showcapt
+{
+    border-top: solid white 10px;
+    height : 600px;
+}
+
+.rectangle_showpiece p,
+.rectangle_showgeneral p,
+.rectangle_showcapt p
+{
+    text-align: center;
+    font-size: 1.5em;
+    color: lightsteelblue;
+}
+
+.rectangle_showpiece,
+.rectangle_showcapt
+{
+    background-color: #406694;
+    width : 20%;
+}
+
+/*SHOWPIECE*/
+
+.rectangle_listepièces li{
+    display: list-item;
+    text-decoration: none;
+    margin-bottom: 25%;
+    color: White;
+}
+
+/*SHOWCAPT*/
+
+.rectangle_listecapt ul {
     margin-top: 20%;
     display: table;
     width: auto;
@@ -136,23 +139,28 @@ nav ul li a
     list-style:none;
 }
 
-.rectangle_showpiece ul li{
+.rectangle_listecapt li{
     display: list-item;
     text-decoration: none;
-    margin-bottom: 25%;
-    color: White;
+    color: white;
+    margin-bottom: 25%:
+    list-style-type: none;
 }
+
+
+
+/*AJOUTCAPT*/
 .ajout_capt p {
     text-align: center;
     font-size: 1em;
     color: lightsteelblue;
 }
 
-.rectangle_showtool ul li p{
-    display: flex;
-    text-decoration: none;
-    color: white;
-    text-decoration: none;
+/*SHOWGENERAL*/
+.rectangle_showgeneral
+{
+    background-color: #7192bb;
+    width : 60%;
 }
 
 .rectangle_annonce p
@@ -161,12 +169,6 @@ nav ul li a
     color: white;
     font-size: 3em;
     margin:auto;
-}
-.rectangle_liste ul li { display: table-column;}
-.rectangle_liste li
-{list-style-type: none;}
-.rectangle_liste li:before {
-    content: "-"
 }
 
 /*
