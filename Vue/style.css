@@ -138,6 +138,7 @@ ul li a
 {
     border-top: solid white 10px;
     height : 600px;
+    margin-bottom: auto;
 }
 
 .showpiece p,
@@ -147,7 +148,6 @@ ul li a
     text-align: center;
     font-size: 1.5em;
     color: lightsteelblue;
-    margin-bottom: auto;
 }
 
 .showpiece,
