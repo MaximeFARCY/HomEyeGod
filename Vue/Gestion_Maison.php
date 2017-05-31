@@ -1,5 +1,6 @@
 <?php
-
+    require ('../Modele/connexion_db.php');
+    require ('DonneeCapt.php')
 ?>
 <!DOCTYPE html>
 <html lang="fr">
