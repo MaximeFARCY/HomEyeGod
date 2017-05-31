@@ -129,7 +129,7 @@ ul li a
 .gestion_capt{
     display : flex;
     justify-content: space-around;
-    margin-bottom: 1%;
+    margin-bottom: auto;
 }
 
 .showpiece,
@@ -137,8 +137,7 @@ ul li a
 .showcapt
 {
     border-top: solid white 10px;
-    height : 600px;
-    margin-bottom: auto;
+
 }
 
 .showpiece p,
@@ -205,6 +204,7 @@ ul li a
 {
     background-color: #7192bb;
     width : 60%;
+    margin-bottom:auto;
 }
 
 .showgeneral h3
