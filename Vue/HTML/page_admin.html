@@ -3,35 +3,47 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../CSS/style.css" />
+    <script type="text/javascript" src="accueil_admin.js"></script>
     <title>Page Administrateur</title>
 </head>
 
 <body>
-    <header>
-        <h1>
-            <a href="home_page.html"><img src="../BANK/logo-accueilDiv2.png" height="15%" width="15%" alt="retour vers l'accueil" /></a>
-        </h1>
-    </header>
-    <nav>
-        <ul id="navigation">
-            <li><a href="home_page.html">Accueil </a></li>
-            <li><a href="mon_compte.html">Mon Compte</a></li>
-            <li><a href="ma_maison.html">Ma maison</a></li>
-            <li><a href="boutique.html">Boutique</a></li>
-            <li><a href="qui_sommes_nous.html">Qui sommes nous?</a></li>
-            <li><a href="aide_contact.html">Aide/Contact</a></li>
-            <li><a href="admin.html">Administrateur</a></li>
-        </ul>
-    </nav>
-    <section class="rectangle_flex">
-        <section class="modif_admin">
-            <p>Modifier le site</p>
-        </section>
-        <section class ="consult_admin">
-            <p>Consultation</p>
-        </section>
+<header>
+    <h1>
+        <a href="home_page.html"><img src="../BANK/logo-accueilDiv2.png" height="15%" width="15%" alt="retour vers l'accueil" /></a>
+    </h1>
+</header>
+<nav>
+    <ul id="navigation">
+        <li><a href="home_page.html">Accueil </a></li>
+        <li><a href="mon_compte.html">Mon Compte</a></li>
+        <li><a href="ma_maison.html">Ma maison</a></li>
+        <li><a href="boutique.html">Boutique</a></li>
+        <li><a href="qui_sommes_nous.html">Qui sommes nous?</a></li>
+        <li><a href="aide_contact.html">Aide/Contact</a></li>
+        <li><a href="admin.html">Administrateur</a></li>
+    </ul>
+</nav>
+
+
+    <section class="rectangle_flex_acc">
+        <div class="modif_admin" onclick="modifLongueur('modif')">
+            <p class="modif_admin">Modifier le site</p>
+        </div>
+        <div class ="consult_admin" onclick="modifLongueur('consult')">
+            <p class="consult_admin">Consultation</p>
+        </div>
     </section>
 
+    <section id="rectangle_flex_modif">
+        <div class="list_page">
+
+        </div>
+    </section>
+
+    <section class="rectangle_flex_consult">
+
+    </section>
 
 
 

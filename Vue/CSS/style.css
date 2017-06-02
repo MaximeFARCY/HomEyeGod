@@ -143,18 +143,12 @@ aside
     background-size: 100%;
 }
 
-.rectangle_flex {
-    display: flex;
-    justify-content: space-around;
-    height: 500px;
-    margin:0;
-}
-
 .modif_admin{
     background-color: #7192bb;
     width : 50%;
     height : 100%;
     margin: 0;
+    transition: width 1000ms , visibility 500ms;
 }
 
 .consult_admin{
@@ -162,4 +156,53 @@ aside
     width : 50%;
     height : 100%;
     margin: 0;
+    transition: width 1000ms , visibility 1000ms;
 }
+
+.consult_admin p{
+    visibility : visible;
+}
+
+.rectangle_flex_acc {
+    display: flex;
+    justify-content: space-around;
+    height: 500px;
+    width : 100%;
+    margin:0;
+    transition: width 1000ms , visibility 1000ms;
+}
+
+.rectangle_flex_consult{
+    display: flex;
+    justify-content: space-around;
+    height: 0px;
+    margin: 0;
+    padding: 0;
+    transition: width 500ms, visibility 500ms;
+    width : 0%
+}
+.rectangle_flex_modif{
+    display: flex;
+    justify-content: space-around;
+    height: 0px;
+    margin:0;
+    padding:0;
+    width : 0%;
+    transition: width 500ms , visibility 500ms;
+    background-color: black;
+}
+.rectangle_flex_encadre{
+    display: flex;
+    justify-content: space-around;
+    height: 500px;
+    margin:0;
+    padding: 0;
+}
+
+.list_page{
+    background-color: #406694;
+    display: flex;
+    height: 100%;
+    width: 20%;
+}
+
