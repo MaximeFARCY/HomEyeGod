@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 23 Mai 2017 à 07:41
+-- Généré le :  Mer 07 Juin 2017 à 08:20
 -- Version du serveur :  5.7.11
--- Version de PHP :  5.5.38
+-- Version de PHP :  7.1.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -81,35 +81,14 @@ CREATE TABLE `capteurs` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `confidence`
---
-
-CREATE TABLE `confidence` (
-  `ConfidenceValue` int(11) NOT NULL,
-  `ConfidenceName` varchar(10) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `donnees`
 --
 
 CREATE TABLE `donnees` (
   `idData` int(11) NOT NULL,
   `idCapteur` int(11) NOT NULL,
-  `Datas` longblob NOT NULL COMMENT 'Fichier avec: Date et heure + données'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `etattopic`
---
-
-CREATE TABLE `etattopic` (
-  `EtatValue` int(11) NOT NULL,
-  `EtatName` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `Date` datetime NOT NULL,
+  `Datas` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'Fichier avec: Date et heure + données'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -122,8 +101,8 @@ CREATE TABLE `maisons` (
   `idMaison` int(11) NOT NULL,
   `idUtilisateur` int(11) NOT NULL,
   `numero_voie` int(11) NOT NULL,
-  `Voie` int(11) NOT NULL,
   `TypeVoie` int(11) NOT NULL,
+  `Voie` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `code_postal` int(5) NOT NULL,
   `Ville` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `Pays` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
@@ -131,6 +110,16 @@ CREATE TABLE `maisons` (
   `Nombre_Pieces` int(11) NOT NULL,
   `Nbre_Pers` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `maisons`
+--
+
+INSERT INTO `maisons` (`idMaison`, `idUtilisateur`, `numero_voie`, `TypeVoie`, `Voie`, `code_postal`, `Ville`, `Pays`, `Superficie`, `Nombre_Pieces`, `Nbre_Pers`) VALUES
+(1, 1, 3, 2, 'General de Guaule', 75001, 'Paris', 'France', 300, 5, 3),
+(2, 2, 1, 1, 'Domisep', 75001, 'Paris', 'France', 10, 1, 1),
+(3, 3, 1, 1, 'Domisep', 75001, 'Paris', 'France', 10, 1, 1),
+(4, 1, 150, 2, 'General de Guaule', 45630, 'Beaulieu-sur-Loire', 'France', 700, 5, 3);
 
 -- --------------------------------------------------------
 
@@ -140,10 +129,27 @@ CREATE TABLE `maisons` (
 
 CREATE TABLE `pieces` (
   `idPiece` int(11) NOT NULL,
-  `Nom` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `idMaison` int(11) NOT NULL,
-  `TypePièce` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+  `Nom` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `pieces`
+--
+
+INSERT INTO `pieces` (`idPiece`, `idMaison`, `Nom`) VALUES
+(1, 1, 'Cusine'),
+(2, 1, 'Entrée'),
+(3, 1, 'Chambre Parents'),
+(4, 1, 'Chambre Enfant'),
+(5, 1, 'Salon'),
+(6, 2, 'Bureau Admin'),
+(7, 3, 'Bureau SuperAdmin'),
+(8, 4, 'Cuisine'),
+(9, 4, 'Entrée'),
+(10, 4, 'Salon'),
+(11, 4, 'Chambre Parents'),
+(12, 4, 'Chambre Enfant');
 
 -- --------------------------------------------------------
 
@@ -152,26 +158,18 @@ CREATE TABLE `pieces` (
 --
 
 CREATE TABLE `roles` (
-  `RolesValue` int(11) NOT NULL,
-  `RoleName` int(11) NOT NULL
+  `RoleValue` int(11) NOT NULL,
+  `RoleName` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Structure de la table `topics`
+-- Contenu de la table `roles`
 --
 
-CREATE TABLE `topics` (
-  `idTopic` int(11) NOT NULL,
-  `Titre` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Message` text COLLATE utf8_unicode_ci NOT NULL,
-  `idUtilisateur` int(11) NOT NULL,
-  `Comptlike` int(11) NOT NULL,
-  `Reponses` text COLLATE utf8_unicode_ci NOT NULL,
-  `Etat` int(11) NOT NULL,
-  `Typetopic` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `roles` (`RoleValue`, `RoleName`) VALUES
+(1, 'Utilisateurs'),
+(2, 'Administrateur'),
+(3, 'SuperAdministrateur');
 
 -- --------------------------------------------------------
 
@@ -187,17 +185,6 @@ CREATE TABLE `typecapteur` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `typetopic`
---
-
-CREATE TABLE `typetopic` (
-  `TypeValue` int(11) NOT NULL,
-  `TypeName` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `typevoie`
 --
 
@@ -205,6 +192,23 @@ CREATE TABLE `typevoie` (
   `TypeValue` int(11) NOT NULL,
   `TypeName` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `typevoie`
+--
+
+INSERT INTO `typevoie` (`TypeValue`, `TypeName`) VALUES
+(1, 'Rue'),
+(2, 'Avenue'),
+(3, 'Boulevard'),
+(4, 'Impasse'),
+(5, 'Chemin'),
+(6, 'Voie'),
+(7, 'Quai'),
+(8, 'Allée'),
+(9, 'Berge'),
+(10, 'Lieu Dit'),
+(11, 'Place');
 
 -- --------------------------------------------------------
 
@@ -221,11 +225,18 @@ CREATE TABLE `utilisateurs` (
   `Numero` text COLLATE utf8_unicode_ci NOT NULL,
   `Mobile` text COLLATE utf8_unicode_ci NOT NULL,
   `Mail` text COLLATE utf8_unicode_ci NOT NULL,
-  `Factures` mediumblob NOT NULL,
-  `Confidence` int(11) DEFAULT '0',
-  `NomUtilisateur` text COLLATE utf8_unicode_ci NOT NULL,
+  `NomUtilisateur` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `Mdp` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Utilisateurs';
+
+--
+-- Contenu de la table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`idUtilisateur`, `Rôles`, `Nom`, `Prénom`, `idAdressePrincipale`, `Numero`, `Mobile`, `Mail`, `NomUtilisateur`, `Mdp`) VALUES
+(1, 1, 'Dupont', 'Tartempion', 1, '018888888', '0609090909', 'dupont.tartempion@mail.com', 'Dudule', 'MotdePasse'),
+(2, 2, 'Admin', 'Admin', 2, '0800810550', '0800810550', 'Admin.Admin@semigod.com', 'Admin', 'Admin'),
+(3, 3, 'Super', 'User', 3, '0800810560', '0800810560', 'super.user@god.com', 'root', 'root');
 
 --
 -- Index pour les tables exportées
@@ -256,22 +267,10 @@ ALTER TABLE `capteurs`
   ADD PRIMARY KEY (`idCapteur`);
 
 --
--- Index pour la table `confidence`
---
-ALTER TABLE `confidence`
-  ADD PRIMARY KEY (`ConfidenceValue`);
-
---
 -- Index pour la table `donnees`
 --
 ALTER TABLE `donnees`
   ADD PRIMARY KEY (`idData`);
-
---
--- Index pour la table `etattopic`
---
-ALTER TABLE `etattopic`
-  ADD PRIMARY KEY (`EtatValue`);
 
 --
 -- Index pour la table `maisons`
@@ -289,24 +288,12 @@ ALTER TABLE `pieces`
 -- Index pour la table `roles`
 --
 ALTER TABLE `roles`
-  ADD PRIMARY KEY (`RolesValue`);
-
---
--- Index pour la table `topics`
---
-ALTER TABLE `topics`
-  ADD PRIMARY KEY (`idTopic`);
+  ADD PRIMARY KEY (`RoleValue`);
 
 --
 -- Index pour la table `typecapteur`
 --
 ALTER TABLE `typecapteur`
-  ADD PRIMARY KEY (`TypeValue`);
-
---
--- Index pour la table `typetopic`
---
-ALTER TABLE `typetopic`
   ADD PRIMARY KEY (`TypeValue`);
 
 --
@@ -319,7 +306,8 @@ ALTER TABLE `typevoie`
 -- Index pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  ADD PRIMARY KEY (`idUtilisateur`);
+  ADD PRIMARY KEY (`idUtilisateur`),
+  ADD UNIQUE KEY `NomUtilisateur` (`NomUtilisateur`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -349,12 +337,27 @@ ALTER TABLE `donnees`
 -- AUTO_INCREMENT pour la table `maisons`
 --
 ALTER TABLE `maisons`
-  MODIFY `idMaison` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMaison` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT pour la table `topics`
+-- AUTO_INCREMENT pour la table `pieces`
 --
-ALTER TABLE `topics`
-  MODIFY `idTopic` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pieces`
+  MODIFY `idPiece` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT pour la table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `RoleValue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pour la table `typevoie`
+--
+ALTER TABLE `typevoie`
+  MODIFY `TypeValue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  MODIFY `idUtilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
