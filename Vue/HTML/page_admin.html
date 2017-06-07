@@ -25,7 +25,7 @@
     </ul>
 </nav>
 
-
+<section class="rectangle_flex_encadre">
     <section class="rectangle_flex_acc">
         <div class="modif_admin" onclick="modifLongueur('modif')">
             <p class="modif_admin">Modifier le site</p>
@@ -35,8 +35,28 @@
         </div>
     </section>
 
-    <section id="rectangle_flex_modif">
+    <section class="rectangle_flex_modif">
         <div class="list_page">
+            <ul>
+                <li>ui
+                    <ul>
+                        <li>ko</li>
+                        <li>jo</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="page_code">
+            <form class="store_text">
+               <textarea id="html_code">
+                <?php
+                    include('Recup.php');
+                    recup_text();
+                ?>
+                   <input type="submit">
+                </textarea>
+
+            </form>
 
         </div>
     </section>
@@ -44,6 +64,7 @@
     <section class="rectangle_flex_consult">
 
     </section>
+</section>
 
 
 

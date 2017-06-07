@@ -5,26 +5,28 @@ function modifLongueur(page) {
     var c = document.getElementsByClassName("rectangle_flex_acc");
 
     for (var i = 0; i < x.length; i++) {
-        x[i].style.width = "0%";
-        x[i].style.visibility = "hidden";
+        x[i].style.display="none";
 
     }
     for (var j = 0; j < m.length; j++) {
-        m[j].style.width = "0%";
-        m[j].style.visibility = "hidden";
+        m[j].style.display="none";
     }
     for (var k = 0; k < c.length; k++) {
-        c[k].style.width = "0%";
-        c[k].style.visibility = "hidden";
+        c[k].style.display="none";
     }
 
-    if (page == 'modif'){
-        document.getElementById("rectangle_flex_modif").style.width ="100%";
-        document.getElementById("rectangle_flex_modif").style.height ="500px";
+    if (page === 'modif'){
+        var n = document.getElementsByClassName("rectangle_flex_modif");
+        for(var l = 0;l<n.length;l++){
+            n[l].style.display = "flex";
+        }
     }
 
-    if (page == 'consult'){
-
+    if (page === 'consult'){
+        var z = document.getElementsByClassName("rectangle_flex_consult");
+        for(var o = 0;o<z.length;o++){
+            z[o].style.display = "flex";
+        }
     }
 
 

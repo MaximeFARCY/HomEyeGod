@@ -45,8 +45,8 @@ label
 nav ul
 {
     display: table;
-    width: auto;
     margin: 0px auto;
+    width: auto;
     padding: auto;
 }
 nav ul li
@@ -173,23 +173,24 @@ aside
 }
 
 .rectangle_flex_consult{
-    display: flex;
+    display: none;
     justify-content: space-around;
-    height: 0px;
     margin: 0;
     padding: 0;
+    height:100%;
+    width:100%;
     transition: width 500ms, visibility 500ms;
-    width : 0%
+
 }
 .rectangle_flex_modif{
-    display: flex;
+    display: none;
     justify-content: space-around;
-    height: 0px;
+    height: 100%;
     margin:0;
     padding:0;
-    width : 0%;
+    width : 100%;
     transition: width 500ms , visibility 500ms;
-    background-color: black;
+
 }
 .rectangle_flex_encadre{
     display: flex;
@@ -197,12 +198,38 @@ aside
     height: 500px;
     margin:0;
     padding: 0;
+    width:100%;
 }
 
 .list_page{
     background-color: #406694;
     display: flex;
     height: 100%;
+    width: 15%;
+}
+.page_code{
+    display: flex;
+    height:100%;
+    width: 85%;
+}
+
+#html_code {
+    display: flex;
+    margin: auto;
+    height:80%;
+    width:80%;
+    background-color: #dee7ff;
+    color: white;
+    font-size: 20px;
+
+}
+.store_text {
+    display: flex;
+    height:100%;
+    width:100%;
+}
+.store_text input{
+    height:10%;
     width: 20%;
 }
 
